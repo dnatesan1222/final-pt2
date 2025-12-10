@@ -38,23 +38,27 @@ int main(){
 	insert(coffee, names, drinks);
 
 	/*Node *curr = coffee;
-	coffeePrint(curr);
-	while (curr->next != nullptr){
-		curr = curr->next;
-		coffeePrint(curr);
-	}*/
+	  coffeePrint(curr);
+	  while (curr->next != nullptr){
+	  curr = curr->next;
+	  coffeePrint(curr);
+	  }*/
 
 	for (int i = 0; i < 10; i++){
 		cout << "\n*** Coffee Booth ***" << endl;
 		cout << "Round " << i+1 << " Queue:" << endl;
-		Node *curr = coffee;
-		coffeePrint(curr);
-		while (curr->next != nullptr){
-			curr = curr->next;
+
+		if (coffee != nullptr){
+			Node *curr = coffee;
 			coffeePrint(curr);
-		}
-		if (coffee != nullptr)
+			while (curr->next != nullptr){
+				curr = curr->next;
+				coffeePrint(curr);
+			}
+			cout << "\n\t" << coffee->name << " served." << endl;
 			coffee = coffee->next;	//customer served
+		}else
+			cout << "\tEMPTY" << endl;
 
 		int prob = rand() % 2;	//rand num 0-1
 		if (prob == 0){
@@ -84,4 +88,3 @@ void insert(Node *&n, string names[MAX_NAMES], string drinks[MAX_DRINKS]){
 void coffeePrint(Node *n){
 	cout << '\t' << n->name << "\tOrder: " << n->drink << endl;
 }
-
