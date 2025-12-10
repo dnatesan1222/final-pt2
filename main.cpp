@@ -31,7 +31,7 @@ int main(){
 		"Stella", "Charles", "Violet", "Dominic", "Claire", "Evan", "Lucy", "Gavin", "Madison", "Wyatt",
 		"Camila", "Jason", "Naomi", "Adrian", "Hazel", "Robert", "Aurora", "Jordan", "Elena", "Parker",
 		"Alice", "Brayden", "Sadie", "Miles", "Ruby", "Cole", "Julia", "Zachary", "Brielle", "Tyler",
-		"Piper", "Leo", "Maya", "Xavier", "Isla", "Asher", "Ivy"};
+		"Piper", "Leo", "Maya", "Xavier", "Isla", "Asher", "Ivy", "Diksha", "Niya", "Divya"};
 	string drinks[MAX_DRINKS] = {"Espresso", "Americano", "Latte", "Cappuccino", "Flat White", "Mocha", "Macchiato", "Cortado", "Cold Brew", "Iced Latte", "Iced Coffee", "Affogato", "Chai Latte", "Matcha Latte", "Frappuccino"};
 
 	insert(coffee, names, drinks);
@@ -85,10 +85,16 @@ int main(){
 		if (!bracelet.empty()){
 			for (int i = 0; i < bracelet.size(); i++)
 				cout << '\t' << bracelet.at(i) << endl;
-			cout << "\n\t" << bracelet[0] << " served." << endl;
-			bracelet.		//customer served
+			cout << "\n\t" << bracelet.front() << " served." << endl;
+			vector<string> temp;
+			for (int i = 1; i < bracelet.size(); i++)
+				temp.push_back(bracelet.at(i));
+			bracelet = temp;		//customer served
 		}else
 			cout << "\tEMPTY" << endl;
+		prob = rand() % 2;
+		if (prob == 0)
+			bracelet.push_back(names[(rand() % MAX_NAMES)]);
 	}
 
 }
