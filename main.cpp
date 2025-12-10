@@ -98,7 +98,6 @@ int main(){
 	}
 
 }
-
 void insert(Node *&n, string names[MAX_NAMES], string drinks[MAX_DRINKS]){
 	Node *temp = new Node;
 	int index = rand() % MAX_NAMES;	//random number 0-99
@@ -115,7 +114,6 @@ void insert(Node *&n, string names[MAX_NAMES], string drinks[MAX_DRINKS]){
 		curr = curr->next;
 	curr->next = temp;
 }
-
 void coffeePrint(Node *n){
 	cout << '\t' << n->name << "\tOrder: " << n->drink << endl;
 }
