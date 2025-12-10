@@ -5,6 +5,7 @@
 #include <string>
 #include <deque>
 #include <vector>
+#include <list>
 using namespace std;
 
 const int MAX_NAMES = 100;
@@ -47,6 +48,8 @@ int main(){
 	bracelet.push_back(names[(rand() % MAX_NAMES)]);
 	bracelet.push_back(names[(rand() % MAX_NAMES)]);
 	bracelet.push_back(names[(rand() % MAX_NAMES)]);
+
+	list<string> hat = {names[(rand() % MAX_NAMES)], names[(rand() % MAX_NAMES)], names[(rand() % MAX_NAMES)]};
 
 	for (int i = 0; i < 10; i++){
 		cout << "\n****************************************************************************************" << endl;
@@ -95,6 +98,18 @@ int main(){
 		prob = rand() % 2;
 		if (prob == 0)
 			bracelet.push_back(names[(rand() % MAX_NAMES)]);
+
+		cout << "\nHat Booth Queue:" << endl;
+		if (!hat.empty()){
+			for (auto it = hat.begin(); it != hat.end(); ++it)
+				cout << '\t' << *it << endl;
+			cout << "\n\t" << hat.front() << " served." << endl;
+			hat.pop_front();		//customer served
+		}else
+			cout << "\tEMPTY" << endl;
+		prob = rand() % 2;
+		if (prob == 0)
+			hat.push_back(names[(rand() % MAX_NAMES)]);
 	}
 
 }
