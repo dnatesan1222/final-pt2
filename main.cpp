@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <string>
-#include <fstream>
+#include <deque>
 using namespace std;
 
 const int MAX_NAMES = 100;
@@ -37,16 +37,15 @@ int main(){
 	insert(coffee, names, drinks);
 	insert(coffee, names, drinks);
 
-	/*Node *curr = coffee;
-	  coffeePrint(curr);
-	  while (curr->next != nullptr){
-	  curr = curr->next;
-	  coffeePrint(curr);
-	  }*/
+	deque<string> muffin;	//assuming all nuffins are the same, any customer in queue wants one muffin
+	muffin.push_back(names[(rand() % MAX_NAMES)]);
+	muffin.push_back(names[(rand() % MAX_NAMES)]);
+	muffin.push_back(names[(rand() % MAX_NAMES)]);
 
 	for (int i = 0; i < 10; i++){
-		cout << "\n*** Coffee Booth ***" << endl;
-		cout << "Round " << i+1 << " Queue:" << endl;
+		cout << "\n****************************************************************************************" << endl;
+		cout << "Round " << i+1 << ":" << endl;
+		cout << "\nCoffee Booth Queue:" << endl;
 
 		if (coffee != nullptr){
 			Node *curr = coffee;
@@ -64,6 +63,11 @@ int main(){
 		if (prob == 0){
 			insert(coffee, names, drinks);
 		}
+
+		cout << "\nMuffin Booth Queue:" << endl;
+
+		
+
 	}
 
 }
