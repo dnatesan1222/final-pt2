@@ -15,7 +15,7 @@ struct Node{
 	Node *next;
 };
 
-void insert(Node *);
+void insert(Node *&, string names[MAX_NAMES], string drinks[MAX_DRINKS]);
 void coffeePrint(Node *);
 
 int main(){
@@ -52,7 +52,7 @@ int main(){
 
 }
 
-void insert(Node *n, string[] names, string[] drinks){
+void insert(Node *&n, string names[MAX_NAMES], string drinks[MAX_DRINKS]){
 	Node *temp = new Node;
 	int index = rand() % MAX_NAMES;	//random number 0-99
 	temp->name = names[index];
@@ -65,7 +65,7 @@ void insert(Node *n, string[] names, string[] drinks){
 	}
 	Node *curr = n;
 	while (curr->next != nullptr)
-		curr = curr.next;
+		curr = curr->next;
 	curr->next = temp;
 }
 
