@@ -6,8 +6,20 @@
 #include <fstream>
 using namespace std;
 
-int main(){
+struct Node{
+	string name;
+	string drink;
+	Node *next;
+};
 
+int main(){
+	Node *coffee;
+	Node *temp
+	for (int i = 0; i < 10; i++){
+
+
+
+	}
 
 }
 
