@@ -44,7 +44,7 @@ int main(){
 
 	for (int i = 0; i < 10; i++){
 		cout << "\n****************************************************************************************" << endl;
-		cout << "Round " << i+1 << ":" << endl;
+		cout << "ROUND " << i+1 << ":" << endl;
 		cout << "\nCoffee Booth Queue:" << endl;
 
 		if (coffee != nullptr){
@@ -60,14 +60,20 @@ int main(){
 			cout << "\tEMPTY" << endl;
 
 		int prob = rand() % 2;	//rand num 0-1
-		if (prob == 0){
+		if (prob == 0)
 			insert(coffee, names, drinks);
-		}
 
 		cout << "\nMuffin Booth Queue:" << endl;
-
-		
-
+		if (!muffin.empty()){
+			for (int i = 0; i < muffin.size(); i++)
+				cout << '\t' << muffin[i] << endl;
+			cout << "\n\t" << muffin[0] << " served." << endl;
+			muffin.pop_front();		//customer served
+		}else
+			cout << "\tEMPTY" << endl;
+		prob = rand() % 2;
+		if (prob == 0)
+			muffin.push_back(names[(rand() % MAX_NAMES)]);
 	}
 
 }
