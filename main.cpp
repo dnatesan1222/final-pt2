@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include <deque>
+#include <vector>
 using namespace std;
 
 const int MAX_NAMES = 100;
@@ -37,10 +38,15 @@ int main(){
 	insert(coffee, names, drinks);
 	insert(coffee, names, drinks);
 
-	deque<string> muffin;	//assuming all nuffins are the same, any customer in queue wants one muffin
+	deque<string> muffin;		//assuming all muffins are the same, any customer in queue wants one muffin
 	muffin.push_back(names[(rand() % MAX_NAMES)]);
 	muffin.push_back(names[(rand() % MAX_NAMES)]);
 	muffin.push_back(names[(rand() % MAX_NAMES)]);
+
+	vector<string> bracelet;	//assuming all bracelets are the same, any customer in queue wants one bracelet
+	bracelet.push_back(names[(rand() % MAX_NAMES)]);
+	bracelet.push_back(names[(rand() % MAX_NAMES)]);
+	bracelet.push_back(names[(rand() % MAX_NAMES)]);
 
 	for (int i = 0; i < 10; i++){
 		cout << "\n****************************************************************************************" << endl;
@@ -74,6 +80,15 @@ int main(){
 		prob = rand() % 2;
 		if (prob == 0)
 			muffin.push_back(names[(rand() % MAX_NAMES)]);
+
+		cout << "\nBracelet Booth Queue:" << endl;
+		if (!bracelet.empty()){
+			for (int i = 0; i < bracelet.size(); i++)
+				cout << '\t' << bracelet.at(i) << endl;
+			cout << "\n\t" << bracelet[0] << " served." << endl;
+			bracelet.		//customer served
+		}else
+			cout << "\tEMPTY" << endl;
 	}
 
 }
