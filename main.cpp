@@ -22,15 +22,25 @@ int main(){
 	temp->drink = "Mocha";
 	temp->next = nullptr;
 	Node *temp1 = new Node;
-	temp->name = "Tara";
-	temp->drink = "Latte";
-	temp->next = nullptr;
+	temp1->name = "Tara";
+	temp1->drink = "Latte";
+	temp1->next = nullptr;
 	coffee->next = temp1;
 	Node *temp2 = new Node;
-	temp->name = "Shawn";
-	temp->drink = "Iced Coffee";
-	temp->next = nullptr;
+	temp2->name = "Shawn";
+	temp2->drink = "Iced Coffee";
+	temp2->next = nullptr;
 	coffee->next->next = temp2;
+
+	string names[100];
+	string drinks[15];
+
+	Node *curr = coffee;
+	coffeePrint(curr);
+	while (curr->next != nullptr){
+		curr = curr->next;
+		coffeePrint(curr);
+	}
 
 	for (int i = 0; i < 10; i++){
 
@@ -41,7 +51,6 @@ int main(){
 }
 
 void coffeePrint(Node *n){
-	cout << n-> 
-
+	cout << n->name << "\tOrder: " << n->drink << endl;
 }
 
